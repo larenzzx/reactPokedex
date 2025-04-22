@@ -61,14 +61,127 @@ const ElementLogo = ({ type }) => {
       );
     case "grass":
       return (
-        <svg viewBox="0 0 24 24" className="w-6 h-6 text-green-500 fill-current">
+        <svg
+          viewBox="0 0 24 24"
+          className="w-6 h-6 text-green-500 fill-current"
+        >
           <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM8,17.5c-1.38,0 -2.5,-1.12 -2.5,-2.5s1.12,-2.5 2.5,-2.5s2.5,1.12 2.5,2.5S9.38,17.5 8,17.5zM12,12c-1.38,0 -2.5,-1.12 -2.5,-2.5S10.62,7 12,7s2.5,1.12 2.5,2.5S13.38,12 12,12zM16,17.5c-1.38,0 -2.5,-1.12 -2.5,-2.5s1.12,-2.5 2.5,-2.5s2.5,1.12 2.5,2.5S17.38,17.5 16,17.5z" />
         </svg>
       );
     case "electric":
       return (
-        <svg viewBox="0 0 24 24" className="w-6 h-6 text-yellow-400 fill-current">
+        <svg
+          viewBox="0 0 24 24"
+          className="w-6 h-6 text-yellow-400 fill-current"
+        >
           <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM13,17h-2v-7h2V17zM13,8h-2V6h2V8z" />
+        </svg>
+      );
+    case "normal":
+      return (
+        <svg viewBox="0 0 24 24" className="w-6 h-6 text-gray-400 fill-current">
+          <circle cx="12" cy="12" r="8" />
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM12,20c-4.41,0 -8,-3.59 -8,-8c0,-4.41 3.59,-8 8,-8s8,3.59 8,8C20,16.41 16.41,20 12,20z" />
+        </svg>
+      );
+    case "fighting":
+      return (
+        <svg
+          viewBox="0 0 24 24"
+          className="w-6 h-6 text-orange-700 fill-current"
+        >
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM15,15.5c-1.66,0 -3,-1.34 -3,-3c0,-0.31 0.05,-0.61 0.14,-0.9L8.5,8.96V12h-2V7h5v2H8.96l3.64,2.64c0.29,-0.09 0.59,-0.14 0.9,-0.14c1.66,0 3,1.34 3,3S16.66,15.5 15,15.5z" />
+        </svg>
+      );
+    case "flying":
+      return (
+        <svg
+          viewBox="0 0 24 24"
+          className="w-6 h-6 text-indigo-400 fill-current"
+        >
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM7,13h10c0,2.76 -2.24,5 -5,5S7,15.76 7,13zM7,9h10c0,0 -2,3 -5,3S7,9 7,9zM12,4c1.66,0 3,1.34 3,3H9C9,5.34 10.34,4 12,4z" />
+        </svg>
+      );
+    case "poison":
+      return (
+        <svg
+          viewBox="0 0 24 24"
+          className="w-6 h-6 text-purple-600 fill-current"
+        >
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM12,6c2.21,0 4,1.79 4,4c0,2.21 -1.79,4 -4,4s-4,-1.79 -4,-4C8,7.79 9.79,6 12,6zM6,12c0,-3.31 2.69,-6 6,-6s6,2.69 6,6c0,3.31 -2.69,6 -6,6S6,15.31 6,12z" />
+        </svg>
+      );
+    case "ground":
+      return (
+        <svg
+          viewBox="0 0 24 24"
+          className="w-6 h-6 text-yellow-600 fill-current"
+        >
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM12,20c-4.41,0 -8,-3.59 -8,-8c0,-4.41 3.59,-8 8,-8s8,3.59 8,8C20,16.41 16.41,20 12,20zM7,14h10v2H7V14zM7,11h10v2H7V11zM7,8h10v2H7V8z" />
+        </svg>
+      );
+    case "rock":
+      return (
+        <svg
+          viewBox="0 0 24 24"
+          className="w-6 h-6 text-yellow-800 fill-current"
+        >
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM16,13l-4,4l-4,-4l-3,-6h14L16,13z" />
+        </svg>
+      );
+    case "bug":
+      return (
+        <svg viewBox="0 0 24 24" className="w-6 h-6 text-lime-500 fill-current">
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM12,17c-2.76,0 -5,-2.24 -5,-5h10C17,14.76 14.76,17 12,17zM15,10h-2V7h-2v3H9V7H7v3c0,2.76 2.24,5 5,5s5,-2.24 5,-5v-3h-2V10z" />
+        </svg>
+      );
+    case "ghost":
+      return (
+        <svg
+          viewBox="0 0 24 24"
+          className="w-6 h-6 text-violet-700 fill-current"
+        >
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM12,18c-3.31,0 -6,-2.69 -6,-6c0,-1 0.25,-1.94 0.68,-2.77c0.44,1.16 1.56,2 2.88,2C11.31,11.22 13,9.53 13,7.5c0,-0.17 -0.02,-0.34 -0.05,-0.5h3.08C15.19,8.58 14,10.18 14,12c0,3.31 2.69,6 6,6c-0.92,0 -1.79,-0.21 -2.56,-0.58C16.5,17.12 16,15 14,15c-1.17,0 -2,0.83 -2,2V18z" />
+        </svg>
+      );
+    case "steel":
+      return (
+        <svg viewBox="0 0 24 24" className="w-6 h-6 text-gray-500 fill-current">
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM12,18l-5,-2.18v-5.64L12,8l5,2.18v5.64L12,18z" />
+        </svg>
+      );
+    case "ice":
+      return (
+        <svg viewBox="0 0 24 24" className="w-6 h-6 text-cyan-300 fill-current">
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM12.71,16.71L9.88,13.88L12,9.29l3.12,4.59L12.71,16.71zM7.88,10.12l2.83,-2.83L15.12,12l-2.83,2.83L7.88,10.12z" />
+        </svg>
+      );
+    case "dragon":
+      return (
+        <svg
+          viewBox="0 0 24 24"
+          className="w-6 h-6 text-indigo-700 fill-current"
+        >
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM12.71,15.29L11,13.59V10c0,-0.55 0.45,-1 1,-1s1,0.45 1,1v2.59l1.71,1.71c0.39,0.39 0.39,1.02 0,1.41C13.73,15.68 13.09,15.68 12.71,15.29zM16,9c0,0.55 -0.45,1 -1,1s-1,-0.45 -1,-1s0.45,-1 1,-1S16,8.45 16,9z" />
+        </svg>
+      );
+    case "dark":
+      return (
+        <svg viewBox="0 0 24 24" className="w-6 h-6 text-gray-800 fill-current">
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5s5,2.24 5,5S14.76,17 12,17z" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+      );
+    case "fairy":
+      return (
+        <svg viewBox="0 0 24 24" className="w-6 h-6 text-pink-300 fill-current">
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM12,18l-2,-5l-5,-2l5,-2l2,-5l2,5l5,2l-5,2L12,18z" />
+        </svg>
+      );
+    case "psychic":
+      return (
+        <svg viewBox="0 0 24 24" className="w-6 h-6 text-pink-400 fill-current">
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM12,16c-2.21,0 -4,-1.79 -4,-4s1.79,-4 4,-4s4,1.79 4,4S14.21,16 12,16zM12,12c-0.55,0 -1,-0.45 -1,-1s0.45,-1 1,-1s1,0.45 1,1S12.55,12 12,12z" />
         </svg>
       );
     default:
@@ -105,7 +218,7 @@ export const Team = () => {
           );
           const pokemon = response.data;
           const weaknesses = await getWeaknesses(pokemon.types);
-          
+
           // Determine evolution status (simplified based on ID like in PokemonCard)
           let status = "Basic";
           if (pokemon.id > 150) {
@@ -113,11 +226,11 @@ export const Team = () => {
           } else if (pokemon.id > 75) {
             status = "Stage 1";
           }
-          
-          details[pokemon.name] = { 
-            ...pokemon, 
+
+          details[pokemon.name] = {
+            ...pokemon,
             weaknesses,
-            status 
+            status,
           };
         })
       );
@@ -233,9 +346,11 @@ export const Team = () => {
 
               const primaryType = pokemon.types[0].type.name;
               const figureBg = typeColors[primaryType] || "bg-gray-300";
-              
+
               // Get HP value from stats
-              const hp = pokemon.stats.find(stat => stat.stat.name === "hp")?.base_stat || "??";
+              const hp =
+                pokemon.stats.find((stat) => stat.stat.name === "hp")
+                  ?.base_stat || "??";
 
               return (
                 <div
@@ -258,16 +373,18 @@ export const Team = () => {
                     <h2 className="card-title capitalize text-base-content">
                       {pokemon.name}
                     </h2>
-                    
+
                     {/* Status and HP row */}
                     <div className="rounded-md flex justify-between items-center p-1 bg-base-300">
-                      <p className="font-semibold text-zinc-500">{pokemon.status}</p>
+                      <p className="font-semibold text-zinc-500">
+                        {pokemon.status}
+                      </p>
                       <div className="flex gap-2 items-center">
                         <p className="font-semibold">HP {hp}</p>
                         <ElementLogo type={primaryType} />
                       </div>
                     </div>
-                    
+
                     <div className="flex flex-wrap gap-2 mb-2">
                       {pokemon.types.map((t) => (
                         <span
@@ -295,10 +412,12 @@ export const Team = () => {
                             #{pokemon.id.toString().padStart(4, "0")}
                           </span>
                         </p>
-                        
+
                         {/* Status and HP row in modal */}
                         <div className="rounded-md flex justify-between items-center p-2 bg-base-300 mt-2">
-                          <p className="font-semibold text-zinc-500">{pokemon.status}</p>
+                          <p className="font-semibold text-zinc-500">
+                            {pokemon.status}
+                          </p>
                           <div className="flex gap-2 items-center">
                             <p className="font-semibold">HP {hp}</p>
                             <ElementLogo type={primaryType} />

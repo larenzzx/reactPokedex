@@ -1,37 +1,6 @@
 {
   "team": [
     {
-      "id": "1c2a",
-      "name": "metapod",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/11.png",
-      "stats": [
-        {
-          "name": "hp",
-          "base": 50
-        },
-        {
-          "name": "attack",
-          "base": 20
-        },
-        {
-          "name": "defense",
-          "base": 55
-        },
-        {
-          "name": "special-attack",
-          "base": 25
-        },
-        {
-          "name": "special-defense",
-          "base": 25
-        },
-        {
-          "name": "speed",
-          "base": 30
-        }
-      ]
-    },
-    {
       "id": "b56a",
       "name": "nidoqueen",
       "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/31.png",
@@ -156,45 +125,38 @@
       ]
     },
     {
-      "id": "6ad9",
-      "name": "ivysaur",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
+      "id": "036b",
+      "name": "pidgey",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/16.png",
       "stats": [
         {
           "name": "hp",
-          "base": 60
+          "base": 40
         },
         {
           "name": "attack",
-          "base": 62
+          "base": 45
         },
         {
           "name": "defense",
-          "base": 63
+          "base": 40
         },
         {
           "name": "special-attack",
-          "base": 80
+          "base": 35
         },
         {
           "name": "special-defense",
-          "base": 80
+          "base": 35
         },
         {
           "name": "speed",
-          "base": 60
+          "base": 56
         }
       ]
     }
   ],
   "battles": [
-    {
-      "id": "6997",
-      "pokemon1": "squirtle",
-      "pokemon2": "pidgeot",
-      "result": "pidgeot, You Lose!",
-      "date": "2025-04-22T07:12:25.590Z"
-    },
     {
       "id": "d34e",
       "pokemon1": "ivysaur",
@@ -232,13 +194,6 @@
       "battleType": "damage"
     },
     {
-      "id": "be9d",
-      "pokemon1": "nidoqueen",
-      "pokemon2": "shellder",
-      "result": "nidoqueen, You Win!",
-      "date": "2025-04-22T13:19:46.661Z"
-    },
-    {
       "id": "f89a",
       "pokemon1": "pikachu",
       "pokemon2": "grimer",
@@ -253,6 +208,28 @@
       "result": "nidoqueen, You Win!",
       "date": "2025-04-22T14:46:01.842Z",
       "battleType": "damage"
+    },
+    {
+      "id": "386e",
+      "pokemon1": "pikachu",
+      "pokemon2": "doduo",
+      "result": "It's a Draw!",
+      "date": "2025-04-22T15:34:14.990Z"
+    },
+    {
+      "id": "95ff",
+      "pokemon1": "pikachu",
+      "pokemon2": "doduo",
+      "result": "pikachu, You Win!",
+      "date": "2025-04-22T15:40:13.246Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "4552",
+      "pokemon1": "pikachu",
+      "pokemon2": "doduo",
+      "result": "It's a Draw!",
+      "date": "2025-04-22T15:40:45.999Z"
     }
   ]
 }

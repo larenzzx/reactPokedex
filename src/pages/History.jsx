@@ -41,6 +41,7 @@ export const History = () => {
   const totalLosses = battles.filter((b) =>
     b.result.includes("You Lose!")
   ).length;
+  const totalDraws = battles.filter((b) => b.result.includes("It's a Draw!")).length;
   const totalMatches = battles.length;
 
   return (
@@ -53,6 +54,7 @@ export const History = () => {
           <p className="text-success">Total Matches: {totalMatches}</p>
           <p className="text-primary">Wins: {totalWins}</p>
           <p className="text-error">Losses: {totalLosses}</p>
+          <p className="text-neutral">Draws: {totalDraws}</p>
         </div>
 
         {battles.length === 0 ? (
@@ -73,7 +75,9 @@ export const History = () => {
                     className={`font-medium ${
                       battle.result.includes("You Win!")
                         ? "text-primary"
-                        : "text-error"
+                        : battle.result.includes("You Lose!")
+                        ? "text-error"
+                        : "text-neutral"
                     }`}
                   >
                     {battle.result}
