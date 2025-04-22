@@ -1,0 +1,50 @@
+@import url("https://fonts.cdnfonts.com/css/pokemon-solid");
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --font-pokemon-logo: "Pokemon Solid", sans-serif;
+  --font-pokemon-s: "Fredoka One", "cursive";
+  --font-pokemon: "Fredoka", sans-serif;
+}
+
+body {
+  @apply font-pokemon
+}
+
+@plugin "daisyui/theme" {
+  name: "pokemon";
+  default: false;
+  prefersdark: false;
+  color-scheme: "dark";
+  --color-base-100: oklch(13% 0.028 261.692);
+  --color-base-200: oklch(21% 0.034 264.665);
+  --color-base-300: oklch(27% 0.033 256.848);
+  --color-base-content: oklch(96% 0.003 264.542);
+  --color-primary: oklch(0.83 0.2 90);
+  --color-primary-content: oklch(98% 0.018 155.826);
+  --color-secondary: oklch(0.5 0.15 250);
+  --color-secondary-content: oklch(96% 0.018 272.314);
+  --color-accent: oklch(0.6 0.25 30);
+  --color-accent-content: oklch(98% 0.026 102.212);
+  --color-neutral: oklch(0.3 0 0);
+  --color-neutral-content: oklch(98% 0.002 247.839);
+  --color-info: oklch(70% 0.165 254.624);
+  --color-info-content: oklch(28% 0.091 267.935);
+  --color-success: oklch(77% 0.152 181.912);
+  --color-success-content: oklch(27% 0.046 192.524);
+  --color-warning: oklch(85% 0.199 91.936);
+  --color-warning-content: oklch(28% 0.066 53.813);
+  --color-error: oklch(70% 0.191 22.216);
+  --color-error-content: oklch(25% 0.092 26.042);
+  --radius-selector: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+
