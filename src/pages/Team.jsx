@@ -44,14 +44,50 @@ const typeLightColors = {
   fairy: "bg-pink-100",
 };
 
+// Element logos as simple SVG components
+const ElementLogo = ({ type }) => {
+  switch (type) {
+    case "fire":
+      return (
+        <svg viewBox="0 0 24 24" className="w-6 h-6 text-red-500 fill-current">
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM13,12c0,3 -2,4 -2,4s-2,-1 -2,-4s2,-6 2,-6S13,9 13,12z" />
+        </svg>
+      );
+    case "water":
+      return (
+        <svg viewBox="0 0 24 24" className="w-6 h-6 text-blue-500 fill-current">
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM12,19c-3.31,0 -6,-2.69 -6,-6c0,-3.09 4,-9 6,-9c2,0 6,5.91 6,9C18,16.31 15.31,19 12,19z" />
+        </svg>
+      );
+    case "grass":
+      return (
+        <svg viewBox="0 0 24 24" className="w-6 h-6 text-green-500 fill-current">
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM8,17.5c-1.38,0 -2.5,-1.12 -2.5,-2.5s1.12,-2.5 2.5,-2.5s2.5,1.12 2.5,2.5S9.38,17.5 8,17.5zM12,12c-1.38,0 -2.5,-1.12 -2.5,-2.5S10.62,7 12,7s2.5,1.12 2.5,2.5S13.38,12 12,12zM16,17.5c-1.38,0 -2.5,-1.12 -2.5,-2.5s1.12,-2.5 2.5,-2.5s2.5,1.12 2.5,2.5S17.38,17.5 16,17.5z" />
+        </svg>
+      );
+    case "electric":
+      return (
+        <svg viewBox="0 0 24 24" className="w-6 h-6 text-yellow-400 fill-current">
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM13,17h-2v-7h2V17zM13,8h-2V6h2V8z" />
+        </svg>
+      );
+    default:
+      return (
+        <svg viewBox="0 0 24 24" className="w-6 h-6 text-gray-400 fill-current">
+          <path d="M12,2C6.48,2 2,6.48 2,12c0,5.52 4.48,10 10,10s10,-4.48 10,-10C22,6.48 17.52,2 12,2zM12,20c-4.41,0 -8,-3.59 -8,-8c0,-4.41 3.59,-8 8,-8s8,3.59 8,8C20,16.41 16.41,20 12,20z" />
+        </svg>
+      );
+  }
+};
+
 export const Team = () => {
   const [team, setTeam] = useState([]);
   const [pokemonDetails, setPokemonDetails] = useState({});
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
+  const [selectedToRemove, setSelectedToRemove] = useState(null);
 
   useEffect(() => {
-    // Fetch team data from JSON server
     fetchTeam();
   }, []);
 
@@ -69,7 +105,20 @@ export const Team = () => {
           );
           const pokemon = response.data;
           const weaknesses = await getWeaknesses(pokemon.types);
-          details[pokemon.name] = { ...pokemon, weaknesses };
+          
+          // Determine evolution status (simplified based on ID like in PokemonCard)
+          let status = "Basic";
+          if (pokemon.id > 150) {
+            status = "Evolved";
+          } else if (pokemon.id > 75) {
+            status = "Stage 1";
+          }
+          
+          details[pokemon.name] = { 
+            ...pokemon, 
+            weaknesses,
+            status 
+          };
         })
       );
 
@@ -112,17 +161,28 @@ export const Team = () => {
     return Object.keys(counts).filter((type) => counts[type] > 0);
   };
 
-  const removeFromTeam = (id) => {
-    // Close the modal first
-    const modal = document.getElementById(`modal-${id}`);
-    if (modal) modal.close(); // Close the modal
-
-    // Proceed with removing from the team
-    axios.delete(`http://localhost:3001/team/${id}`).then(() => {
-      // Optimistically update the state without waiting for a re-fetch
-      setTeam((prevTeam) => prevTeam.filter((pokemon) => pokemon.id !== id));
-    });
+  const confirmRemove = (pokemon) => {
+    setSelectedToRemove(pokemon);
+    document.getElementById("confirm-remove-modal").showModal();
   };
+
+  const removeFromTeam = async () => {
+    if (!selectedToRemove) return;
+    const { id, name } = selectedToRemove;
+
+    try {
+      await axios.delete(`http://localhost:3001/team/${id}`);
+      setTeam((prevTeam) => prevTeam.filter((pokemon) => pokemon.id !== id));
+      setToastMessage(`${name} has been removed from your team.`);
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 3000);
+    } catch (error) {
+      console.error("Error removing Pokémon:", error);
+    } finally {
+      setSelectedToRemove(null);
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -130,6 +190,39 @@ export const Team = () => {
         <h2 className="text-3xl font-bold my-10 text-center">
           My Pokémon Team
         </h2>
+
+        {/* Toast Notification */}
+        {showToast && (
+          <div className="toast toast-top toast-end z-50">
+            <div className="alert alert-error text-white">
+              <span>{toastMessage}</span>
+            </div>
+          </div>
+        )}
+
+        {/* Confirmation Modal */}
+        <dialog id="confirm-remove-modal" className="modal">
+          <div className="modal-box bg-base-200">
+            <h3 className="font-bold text-lg text-red-500">Remove Pokémon</h3>
+            <p className="py-4">
+              Are you sure you want to remove{" "}
+              <strong className="capitalize">{selectedToRemove?.name}</strong>{" "}
+              from your team?
+            </p>
+            <div className="modal-action">
+              <form method="dialog" className="flex gap-2">
+                <button className="btn">Cancel</button>
+                <button
+                  className="btn btn-error text-white"
+                  onClick={removeFromTeam}
+                >
+                  Remove
+                </button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+
         {team.length === 0 ? (
           <p className="text-center text-slate-500">Your team is empty.</p>
         ) : (
@@ -140,7 +233,9 @@ export const Team = () => {
 
               const primaryType = pokemon.types[0].type.name;
               const figureBg = typeColors[primaryType] || "bg-gray-300";
-              const modalBg = typeLightColors[primaryType] || "bg-gray-200";
+              
+              // Get HP value from stats
+              const hp = pokemon.stats.find(stat => stat.stat.name === "hp")?.base_stat || "??";
 
               return (
                 <div
@@ -163,6 +258,16 @@ export const Team = () => {
                     <h2 className="card-title capitalize text-base-content">
                       {pokemon.name}
                     </h2>
+                    
+                    {/* Status and HP row */}
+                    <div className="rounded-md flex justify-between items-center p-1 bg-base-300">
+                      <p className="font-semibold text-zinc-500">{pokemon.status}</p>
+                      <div className="flex gap-2 items-center">
+                        <p className="font-semibold">HP {hp}</p>
+                        <ElementLogo type={primaryType} />
+                      </div>
+                    </div>
+                    
                     <div className="flex flex-wrap gap-2 mb-2">
                       {pokemon.types.map((t) => (
                         <span
@@ -178,7 +283,7 @@ export const Team = () => {
 
                     {/* Modal */}
                     <dialog id={`modal-${p.id}`} className="modal">
-                      <div className={`modal-box bg-base-200`}>
+                      <div className="modal-box bg-base-200">
                         <form method="dialog">
                           <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
                             ✕
@@ -190,6 +295,15 @@ export const Team = () => {
                             #{pokemon.id.toString().padStart(4, "0")}
                           </span>
                         </p>
+                        
+                        {/* Status and HP row in modal */}
+                        <div className="rounded-md flex justify-between items-center p-2 bg-base-300 mt-2">
+                          <p className="font-semibold text-zinc-500">{pokemon.status}</p>
+                          <div className="flex gap-2 items-center">
+                            <p className="font-semibold">HP {hp}</p>
+                            <ElementLogo type={primaryType} />
+                          </div>
+                        </div>
 
                         <div className="mt-2 md:flex md:gap-4 md:justify-center">
                           <figure className={`rounded-lg ${figureBg}`}>
@@ -277,9 +391,8 @@ export const Team = () => {
                           </div>
                         </div>
 
-                        {/* Remove from Team Button */}
                         <button
-                          onClick={() => removeFromTeam(p.id)}
+                          onClick={() => confirmRemove(p)}
                           className="btn bg-red-400 hover:bg-red-500 text-white border-none btn-sm mt-4 w-full"
                         >
                           Remove from Team

@@ -66,7 +66,7 @@ export const Navbar = () => {
           <span className="absolute top-0 left-0 mt-1 ml-1 h-full w-full rounded bg-secondary"></span>
           <Link
             to="/battle"
-            className="fold-bold font-pokemon relative inline-block h-full w-full rounded border-2 border-secondary bg-primary px-3 py-1 text-base font-bold text-white transition duration-100 hover:bg-primary"
+            className="fold-bold font-pokemon relative inline-block h-full w-full rounded border-2 border-secondary bg-primary px-3 py-1 text-base font-bold text-white transition duration-100 hover:bg-yellow-500 hover:text-secondary"
           >
             Battle
           </Link>

@@ -1060,7 +1060,7 @@ export const Battle = () => {
                     <button
                       onClick={() => startDamageBattle("auto")}
                       disabled={!poke1 || !poke2 || battleInProgress}
-                      className={`btn btn-lg text-black border-none ${
+                      className={`btn btn-sm lg:btn-md text-black border-none ${
                         !poke1 || !poke2 || battleInProgress
                           ? "bg-gray-300 cursor-not-allowed"
                           : "bg-yellow-400 hover:bg-yellow-500"
@@ -1071,7 +1071,7 @@ export const Battle = () => {
                     <button
                       onClick={() => startDamageBattle("manual")}
                       disabled={!poke1 || !poke2 || battleInProgress}
-                      className={`btn btn-lg text-black border-none ${
+                      className={`btn btn-sm lg:btn-md text-black border-none ${
                         !poke1 || !poke2 || battleInProgress
                           ? "bg-gray-300 cursor-not-allowed"
                           : "bg-blue-400 hover:bg-blue-500"
@@ -1093,7 +1093,7 @@ export const Battle = () => {
                   {(battleInProgress || damageLog.length > 0) && (
                     <button
                       onClick={resetDamageBattle}
-                      className="btn bg-red-500 hover:bg-red-600 text-white border-none mt-2"
+                      className="btn btn-sm lg:btn-md bg-red-500 hover:bg-red-600 text-white border-none mt-2"
                     >
                       Reset Battle
                     </button>
