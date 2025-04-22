@@ -1,0 +1,248 @@
+{
+  "team": [
+    {
+      "id": "c760",
+      "name": "ivysaur",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 60
+        },
+        {
+          "name": "attack",
+          "base": 62
+        },
+        {
+          "name": "defense",
+          "base": 63
+        },
+        {
+          "name": "special-attack",
+          "base": 80
+        },
+        {
+          "name": "special-defense",
+          "base": 80
+        },
+        {
+          "name": "speed",
+          "base": 60
+        }
+      ]
+    },
+    {
+      "id": "59fc",
+      "name": "charmeleon",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 58
+        },
+        {
+          "name": "attack",
+          "base": 64
+        },
+        {
+          "name": "defense",
+          "base": 58
+        },
+        {
+          "name": "special-attack",
+          "base": 80
+        },
+        {
+          "name": "special-defense",
+          "base": 65
+        },
+        {
+          "name": "speed",
+          "base": 80
+        }
+      ]
+    },
+    {
+      "id": "1c2a",
+      "name": "metapod",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/11.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 50
+        },
+        {
+          "name": "attack",
+          "base": 20
+        },
+        {
+          "name": "defense",
+          "base": 55
+        },
+        {
+          "name": "special-attack",
+          "base": 25
+        },
+        {
+          "name": "special-defense",
+          "base": 25
+        },
+        {
+          "name": "speed",
+          "base": 30
+        }
+      ]
+    },
+    {
+      "id": "8524",
+      "name": "caterpie",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 45
+        },
+        {
+          "name": "attack",
+          "base": 30
+        },
+        {
+          "name": "defense",
+          "base": 35
+        },
+        {
+          "name": "special-attack",
+          "base": 20
+        },
+        {
+          "name": "special-defense",
+          "base": 20
+        },
+        {
+          "name": "speed",
+          "base": 45
+        }
+      ]
+    },
+    {
+      "id": "b4ab",
+      "name": "squirtle",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 44
+        },
+        {
+          "name": "attack",
+          "base": 48
+        },
+        {
+          "name": "defense",
+          "base": 65
+        },
+        {
+          "name": "special-attack",
+          "base": 50
+        },
+        {
+          "name": "special-defense",
+          "base": 64
+        },
+        {
+          "name": "speed",
+          "base": 43
+        }
+      ]
+    },
+    {
+      "id": "05ab",
+      "name": "pikachu",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 35
+        },
+        {
+          "name": "attack",
+          "base": 55
+        },
+        {
+          "name": "defense",
+          "base": 40
+        },
+        {
+          "name": "special-attack",
+          "base": 50
+        },
+        {
+          "name": "special-defense",
+          "base": 50
+        },
+        {
+          "name": "speed",
+          "base": 90
+        }
+      ]
+    }
+  ],
+  "battles": [
+    {
+      "id": "6997",
+      "pokemon1": "squirtle",
+      "pokemon2": "pidgeot",
+      "result": "pidgeot, You Lose!",
+      "date": "2025-04-22T07:12:25.590Z"
+    },
+    {
+      "id": "0139",
+      "pokemon1": "caterpie",
+      "pokemon2": "lapras",
+      "result": "lapras, You Lose!",
+      "date": "2025-04-22T07:33:27.537Z"
+    },
+    {
+      "id": "d34e",
+      "pokemon1": "ivysaur",
+      "pokemon2": "kakuna",
+      "result": "ivysaur, You Win!",
+      "date": "2025-04-22T07:38:04.814Z"
+    },
+    {
+      "id": "ceb4",
+      "pokemon1": "squirtle",
+      "pokemon2": "kakuna",
+      "result": "squirtle, You Win!",
+      "date": "2025-04-22T07:39:48.448Z"
+    },
+    {
+      "id": "2bd8",
+      "pokemon1": "charmeleon",
+      "pokemon2": "spearow",
+      "result": "charmeleon, You Win!",
+      "date": "2025-04-22T07:50:51.673Z"
+    },
+    {
+      "id": "a5d6",
+      "pokemon1": "metapod",
+      "pokemon2": "machamp",
+      "result": "machamp, You Lose!",
+      "date": "2025-04-22T07:53:44.017Z"
+    },
+    {
+      "id": "5b82",
+      "pokemon1": "pikachu",
+      "pokemon2": "mewtwo",
+      "result": "mewtwo, You Lose!",
+      "date": "2025-04-22T09:30:34.896Z"
+    },
+    {
+      "id": "76f2",
+      "pokemon1": "metapod",
+      "pokemon2": "pidgey",
+      "result": "pidgey, You Lose!",
+      "date": "2025-04-22T09:31:29.182Z"
+    }
+  ]
+}

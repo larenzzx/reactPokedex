@@ -1,0 +1,68 @@
+import { Navbar } from "../components/Navbar";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import dayjs from "dayjs";
+
+export const History = () => {
+  const [battles, setBattles] = useState([]);
+
+  const fetchBattleHistory = async () => {
+    try {
+      const response = await axios.get("http://localhost:3001/battles");
+      const sortedBattles = response.data.sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+      );
+      setBattles(sortedBattles);
+    } catch (error) {
+      console.error("Error fetching battle history:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchBattleHistory();
+  }, []);
+
+  return (
+    <>
+      <Navbar />
+      <div className="p-4">
+        <h2 className="text-3xl font-bold my-10 text-center">
+          Battle History
+        </h2>
+
+        {/* <button
+        onClick={fetchBattleHistory}
+        className="btn btn-sm mb-4 bg-yellow-400 hover:bg-yellow-500 text-black border-none"
+      >
+        Refresh History
+      </button> */}
+
+        {battles.length === 0 ? (
+          <p>No battles recorded yet.</p>
+        ) : (
+          <div className="space-y-4">
+            {battles.map((battle) => (
+              <div
+                key={battle.id}
+                className="bg-base-200 p-4 rounded-lg shadow border border-base-300 md:flex md:items-center md:justify-between lg:justify-around"
+              >
+                <div className="text-lg font-semibold w-56">
+                  {battle.pokemon1} vs {battle.pokemon2}
+                </div>
+                <div className="text-sm text-base-content/70 w-48">
+                  Result:{" "}
+                  <span className="font-medium text-primary w-48">
+                    {battle.result}
+                  </span>
+                </div>
+                <div className="text-sm text-base-content/60">
+                  Date: {dayjs(battle.date).format("MMM D, YYYY h:mm A")}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </>
+  );
+};
