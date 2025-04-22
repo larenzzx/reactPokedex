@@ -243,6 +243,170 @@
       "pokemon2": "pidgey",
       "result": "pidgey, You Lose!",
       "date": "2025-04-22T09:31:29.182Z"
+    },
+    {
+      "id": "551d",
+      "pokemon1": "caterpie",
+      "pokemon2": "pidgeotto",
+      "result": "pidgeotto, You Lose!",
+      "date": "2025-04-22T11:35:10.609Z"
+    },
+    {
+      "id": "8828",
+      "pokemon1": "caterpie",
+      "pokemon2": "pidgeotto",
+      "result": "pidgeotto, You Lose!",
+      "date": "2025-04-22T11:48:17.448Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "7460",
+      "pokemon1": "pikachu",
+      "pokemon2": "nidoqueen",
+      "result": "nidoqueen, You Lose!",
+      "date": "2025-04-22T11:50:15.619Z"
+    },
+    {
+      "id": "c03b",
+      "pokemon1": "pikachu",
+      "pokemon2": "nidoqueen",
+      "result": "nidoqueen, You Lose!",
+      "date": "2025-04-22T11:50:23.753Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "ce7e",
+      "pokemon1": "pikachu",
+      "pokemon2": "nidoqueen",
+      "result": "nidoqueen, You Lose!",
+      "date": "2025-04-22T11:50:33.252Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "57c1",
+      "pokemon1": "pikachu",
+      "pokemon2": "nidoqueen",
+      "result": "nidoqueen, You Lose!",
+      "date": "2025-04-22T11:51:15.283Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "aafd",
+      "pokemon1": "charmeleon",
+      "pokemon2": "nidoqueen",
+      "result": "nidoqueen, You Lose!",
+      "date": "2025-04-22T11:52:02.703Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "a9f4",
+      "pokemon1": "charmeleon",
+      "pokemon2": "nidoqueen",
+      "result": "nidoqueen, You Lose!",
+      "date": "2025-04-22T11:53:30.204Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "3f70",
+      "pokemon1": "caterpie",
+      "pokemon2": "nidorina",
+      "result": "nidorina, You Lose!",
+      "date": "2025-04-22T12:14:37.624Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "8aff",
+      "pokemon1": "pikachu",
+      "pokemon2": "seaking",
+      "result": "seaking, You Lose!",
+      "date": "2025-04-22T12:16:12.564Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "8e31",
+      "pokemon1": "pikachu",
+      "pokemon2": "arbok",
+      "result": "arbok, You Lose!",
+      "date": "2025-04-22T12:18:50.754Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "af72",
+      "pokemon1": "pikachu",
+      "pokemon2": "arbok",
+      "result": "arbok, You Lose!",
+      "date": "2025-04-22T12:19:40.919Z"
+    },
+    {
+      "id": "55dc",
+      "pokemon1": "pikachu",
+      "pokemon2": "arbok",
+      "result": "arbok, You Lose!",
+      "date": "2025-04-22T12:20:11.357Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "6e9f",
+      "pokemon1": "ivysaur",
+      "pokemon2": "mr-mime",
+      "result": "mr-mime, You Lose!",
+      "date": "2025-04-22T12:32:41.191Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "90d4",
+      "pokemon1": "ivysaur",
+      "pokemon2": "mr-mime",
+      "result": "mr-mime, You Lose!",
+      "date": "2025-04-22T12:33:56.885Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "084d",
+      "pokemon1": "ivysaur",
+      "pokemon2": "omastar",
+      "result": "ivysaur, You Win!",
+      "date": "2025-04-22T12:34:43.669Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "da5f",
+      "pokemon1": "ivysaur",
+      "pokemon2": "graveler",
+      "result": "ivysaur, You Win!",
+      "date": "2025-04-22T12:43:34.126Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "2e57",
+      "pokemon1": "charmeleon",
+      "pokemon2": "ponyta",
+      "result": "ponyta, You Lose!",
+      "date": "2025-04-22T12:44:39.411Z"
+    },
+    {
+      "id": "4cfa",
+      "pokemon1": "charmeleon",
+      "pokemon2": "ponyta",
+      "result": "ponyta, You Lose!",
+      "date": "2025-04-22T12:45:30.829Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "f39a",
+      "pokemon1": "charmeleon",
+      "pokemon2": "ponyta",
+      "result": "ponyta, You Lose!",
+      "date": "2025-04-22T12:46:25.773Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "1456",
+      "pokemon1": "charmeleon",
+      "pokemon2": "ponyta",
+      "result": "ponyta, You Lose!",
+      "date": "2025-04-22T12:47:38.172Z",
+      "battleType": "damage"
     }
   ]
 }
