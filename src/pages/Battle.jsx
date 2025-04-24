@@ -1,3 +1,4 @@
+import BackgroundMusic from "../components/BackgroundMusic";
 import { Navbar } from "../components/Navbar";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -832,6 +833,8 @@ export const Battle = () => {
 
   return (
     <>
+      {/* Background music component */}
+      <BackgroundMusic src="/audio/battle-theme.mp3" />
       <Navbar />
       <div className="container mx-auto lg:px-16">
         <h2 className="text-3xl font-bold mt-6 mb-2 text-center">
