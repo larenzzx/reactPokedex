@@ -397,13 +397,15 @@ export const Battle = () => {
                 (s) =>
                   s.stat.name === "hp" ||
                   s.stat.name === "attack" ||
-                  s.stat.name === "speed"
+                  s.stat.name === "speed" ||
+                  s.stat.name === "defense"
               )
               .map((s) => {
                 let badgeColor = "";
                 if (s.stat.name === "hp") badgeColor = "badge-success";
                 else if (s.stat.name === "attack") badgeColor = "badge-error";
                 else if (s.stat.name === "speed") badgeColor = "badge-info";
+                else if (s.stat.name === "defense") badgeColor = "badge-primary";
 
                 return (
                   <p
