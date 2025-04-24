@@ -164,6 +164,20 @@ export const Battle = () => {
   const [battleWinner, setBattleWinner] = useState("");
   const [battleMode, setBattleMode] = useState(""); // "auto" or "manual"
   const [battleEnded, setBattleEnded] = useState(false);
+  // Define state for active tab
+  const [activeTab, setActiveTab] = useState("stats");
+
+  // Load saved tab preference on component mount
+  useEffect(() => {
+    const savedTab = localStorage.getItem("activeTab") || "stats";
+    setActiveTab(savedTab);
+  }, []);
+
+  // Handler for tab changes
+  const handleTabChange = (tabName) => {
+    setActiveTab(tabName);
+    localStorage.setItem("activeTab", tabName);
+  };
 
   // Load data on component mount
   useEffect(() => {
@@ -819,7 +833,6 @@ export const Battle = () => {
   return (
     <>
       <Navbar />
-
       <div className="container mx-auto lg:px-16">
         <h2 className="text-3xl font-bold mt-6 mb-2 text-center">
           Battle Simulation
@@ -832,7 +845,8 @@ export const Battle = () => {
             name="my_tabs_3"
             className="tab"
             aria-label="Stats Based"
-            defaultChecked
+            checked={activeTab === "stats"}
+            onChange={() => handleTabChange("stats")}
           />
           <div className="tab-content bg-base-100 border-base-300 p-6">
             <div className="grid lg:grid-cols-3 place-items-center gap-2">
@@ -949,7 +963,7 @@ export const Battle = () => {
 
             {/* Battle Logs */}
             {battleResults.length > 0 && (
-              <div className="overflow-x-auto mt-6 border border-yellow-400 rounded-lg shadow-md mb-4">
+              <div className="overflow-x-auto mt-6 rounded-lg shadow-md mb-4">
                 <table className="table table-zebra w-full">
                   <thead className="bg-primary">
                     <tr className="text-black">
@@ -986,7 +1000,7 @@ export const Battle = () => {
                     ))}
                   </tbody>
                 </table>
-                <div className="text-lg p-2 font-medium text-center border-t-2 border-yellow-400 bg-base-300">
+                <div className="text-lg p-2 font-medium text-center bg-base-300">
                   Winner:{" "}
                   <span className="capitalize font-bold">{overallWinner}</span>
                 </div>
@@ -999,6 +1013,8 @@ export const Battle = () => {
             name="my_tabs_3"
             className="tab"
             aria-label="Damage Based"
+            checked={activeTab === "damage"}
+            onChange={() => handleTabChange("damage")}
           />
           <div className="tab-content bg-base-100 border-base-300 p-6">
             <div className="grid lg:grid-cols-3 place-items-center gap-2">
@@ -1188,7 +1204,7 @@ export const Battle = () => {
 
             {/* Battle Log */}
             {damageLog.length > 0 && (
-              <div className="mt-6 border border-yellow-400 rounded-lg shadow-md mb-4">
+              <div className="mt-6 rounded-lg shadow-md mb-4">
                 <div className="bg-primary text-black font-bold p-2 rounded-t-lg flex justify-between items-center">
                   <span>Battle Log</span>
                   {battleWinner && (
@@ -1213,7 +1229,7 @@ export const Battle = () => {
 
                 {/* Result Summary */}
                 {battleWinner && (
-                  <div className="p-4 bg-base-300 rounded-b-lg border-t border-yellow-400">
+                  <div className="p-4 bg-base-300 rounded-b-lg">
                     <div className="text-center text-xl font-bold">
                       Battle Result:{" "}
                       <span className="capitalize">{battleWinner}</span>

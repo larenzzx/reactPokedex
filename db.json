@@ -1,68 +1,6 @@
 {
   "team": [
     {
-      "id": "b56a",
-      "name": "nidoqueen",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/31.png",
-      "stats": [
-        {
-          "name": "hp",
-          "base": 90
-        },
-        {
-          "name": "attack",
-          "base": 92
-        },
-        {
-          "name": "defense",
-          "base": 87
-        },
-        {
-          "name": "special-attack",
-          "base": 75
-        },
-        {
-          "name": "special-defense",
-          "base": 85
-        },
-        {
-          "name": "speed",
-          "base": 76
-        }
-      ]
-    },
-    {
-      "id": "73c0",
-      "name": "venusaur",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
-      "stats": [
-        {
-          "name": "hp",
-          "base": 80
-        },
-        {
-          "name": "attack",
-          "base": 82
-        },
-        {
-          "name": "defense",
-          "base": 83
-        },
-        {
-          "name": "special-attack",
-          "base": 100
-        },
-        {
-          "name": "special-defense",
-          "base": 100
-        },
-        {
-          "name": "speed",
-          "base": 80
-        }
-      ]
-    },
-    {
       "id": "fb75",
       "name": "ivysaur",
       "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
@@ -94,37 +32,6 @@
       ]
     },
     {
-      "id": "3b1e",
-      "name": "bulbasaur",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-      "stats": [
-        {
-          "name": "hp",
-          "base": 45
-        },
-        {
-          "name": "attack",
-          "base": 49
-        },
-        {
-          "name": "defense",
-          "base": 49
-        },
-        {
-          "name": "special-attack",
-          "base": 65
-        },
-        {
-          "name": "special-defense",
-          "base": 65
-        },
-        {
-          "name": "speed",
-          "base": 45
-        }
-      ]
-    },
-    {
       "id": "92a6",
       "name": "wartortle",
       "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png",
@@ -152,6 +59,37 @@
         {
           "name": "speed",
           "base": 58
+        }
+      ]
+    },
+    {
+      "id": "a08c",
+      "name": "mewtwo",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 106
+        },
+        {
+          "name": "attack",
+          "base": 110
+        },
+        {
+          "name": "defense",
+          "base": 90
+        },
+        {
+          "name": "special-attack",
+          "base": 154
+        },
+        {
+          "name": "special-defense",
+          "base": 90
+        },
+        {
+          "name": "speed",
+          "base": 130
         }
       ]
     }
@@ -267,6 +205,113 @@
       "pokemon2": "growlithe",
       "result": "nidoqueen, You Win!",
       "date": "2025-04-24T05:40:00.810Z"
+    },
+    {
+      "id": "a33b",
+      "pokemon1": "bulbasaur",
+      "pokemon2": "magikarp",
+      "result": "bulbasaur, You Win!",
+      "date": "2025-04-24T07:03:00.277Z"
+    },
+    {
+      "id": "cd2a",
+      "pokemon1": "bulbasaur",
+      "pokemon2": "magikarp",
+      "result": "bulbasaur, You Win!",
+      "date": "2025-04-24T07:06:52.597Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "ec0b",
+      "pokemon1": "bulbasaur",
+      "pokemon2": "kabuto",
+      "result": "kabuto, You Lose!",
+      "date": "2025-04-24T07:43:56.207Z"
+    },
+    {
+      "id": "9b5c",
+      "pokemon1": "bulbasaur",
+      "pokemon2": "kabuto",
+      "result": "bulbasaur, You Win!",
+      "date": "2025-04-24T07:44:13.479Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "7580",
+      "pokemon1": "bulbasaur",
+      "pokemon2": "kabuto",
+      "result": "bulbasaur, You Win!",
+      "date": "2025-04-24T07:54:01.160Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "b48c",
+      "pokemon1": "zangoose",
+      "pokemon2": "diglett",
+      "result": "zangoose, You Win!",
+      "date": "2025-04-24T08:09:42.986Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "ebe7",
+      "pokemon1": "zangoose",
+      "pokemon2": "diglett",
+      "result": "zangoose, You Win!",
+      "date": "2025-04-24T08:10:00.237Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "3c9e",
+      "pokemon1": "ivysaur",
+      "pokemon2": "ponyta",
+      "result": "ponyta, You Lose!",
+      "date": "2025-04-24T08:10:56.652Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "2f50",
+      "pokemon1": "zangoose",
+      "pokemon2": "kingambit",
+      "result": "kingambit, You Lose!",
+      "date": "2025-04-24T08:11:44.706Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "ff33",
+      "pokemon1": "iron-moth",
+      "pokemon2": "flabebe",
+      "result": "iron-moth, You Win!",
+      "date": "2025-04-24T08:26:57.947Z"
+    },
+    {
+      "id": "0f68",
+      "pokemon1": "mewtwo",
+      "pokemon2": "ninetales",
+      "result": "mewtwo, You Win!",
+      "date": "2025-04-24T08:31:33.933Z"
+    },
+    {
+      "id": "1ddd",
+      "pokemon1": "mewtwo",
+      "pokemon2": "ninetales",
+      "result": "mewtwo, You Win!",
+      "date": "2025-04-24T08:32:11.273Z"
+    },
+    {
+      "id": "b1b8",
+      "pokemon1": "mewtwo",
+      "pokemon2": "magikarp",
+      "result": "mewtwo, You Win!",
+      "date": "2025-04-24T08:33:28.235Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "d49d",
+      "pokemon1": "mewtwo",
+      "pokemon2": "tauros",
+      "result": "mewtwo, You Win!",
+      "date": "2025-04-24T08:38:18.281Z",
+      "battleType": "damage"
     }
   ]
 }
