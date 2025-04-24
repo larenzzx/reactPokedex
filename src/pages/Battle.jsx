@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import VS from "../assets/vs.png";
 import Pokelogo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const typeColors = {
   fire: "bg-red-500",
@@ -837,7 +838,14 @@ export const Battle = () => {
         <h2 className="text-3xl font-bold mt-6 mb-2 text-center">
           Battle Simulation
         </h2>
-
+        <div className="text-center">
+          <Link
+            to="/multiplayer"
+            className="underline text-secondary"
+          >
+            Multiplayer
+          </Link>
+        </div>
         {/* name of each tab group should be unique */}
         <div className="tabs tabs-lift">
           <input

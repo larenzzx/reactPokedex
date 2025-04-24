@@ -313,5 +313,63 @@
       "date": "2025-04-24T08:38:18.281Z",
       "battleType": "damage"
     }
+  ],
+  "multiBattle": [
+    {
+      "id": "2b2e858f-3878-4548-8a47-533df39a8f63",
+      "host": {
+        "ready": false,
+        "team": []
+      },
+      "guest": {
+        "ready": false,
+        "team": []
+      },
+      "status": "waiting",
+      "currentTurn": "host",
+      "battleLog": []
+    },
+    {
+      "id": "20e09a52-7dd9-48fa-8fe3-0eabfc4d1508",
+      "host": {
+        "ready": false,
+        "team": []
+      },
+      "guest": {
+        "ready": false,
+        "team": []
+      },
+      "status": "waiting",
+      "currentTurn": "host",
+      "battleLog": []
+    },
+    {
+      "id": "411f4269-dafa-4e78-b0bc-01a5de45aa3b",
+      "host": {
+        "ready": false,
+        "team": []
+      },
+      "guest": {
+        "ready": false,
+        "team": []
+      },
+      "status": "waiting",
+      "currentTurn": "host",
+      "battleLog": []
+    },
+    {
+      "id": "58fa973b-808b-4fe7-882e-c4978466f3ea",
+      "host": {
+        "ready": false,
+        "team": []
+      },
+      "guest": {
+        "ready": false,
+        "team": []
+      },
+      "status": "waiting",
+      "currentTurn": "host",
+      "battleLog": []
+    }
   ]
 }

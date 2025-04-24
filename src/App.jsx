@@ -3,6 +3,7 @@ import { Pokedex } from "./pages/Pokedex";
 import { Team } from "./pages/Team";
 import { History } from "./pages/History";
 import { Battle } from "./pages/Battle";
+import { Multiplayer } from "./pages/Multiplayer";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/battle" element={<Battle />} />
         <Route path="/history" element={<History />} />
+        <Route path="/multiplayer" element={<Multiplayer />} />
       </Routes>
     </>
   );
