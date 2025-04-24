@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import {
+  Heart as HeartIcon,
+  Check as CheckIcon,
+  AlertCircle as AlertCircleIcon,
+} from "lucide-react";
 
 const typeColors = {
   normal: "bg-gray-400",
@@ -261,7 +266,15 @@ export const PokemonCard = ({ url }) => {
 
   const showToastNotification = (message, type = "success") => {
     setToastMessage(message);
-    setToastType(type);
+    setToastType(
+      type === "success"
+        ? "alert-success"
+        : type === "warning"
+          ? "alert-warning"
+          : type === "error"
+            ? "alert-error"
+            : "alert-info"
+    );
     setShowToast(true);
     setTimeout(() => setShowToast(false), 3000);
   };
@@ -269,6 +282,7 @@ export const PokemonCard = ({ url }) => {
   const handleAddToTeam = () => {
     // Close the confirmation modal
     document.getElementById(`confirm-modal-${pokemon.id}`).close();
+    document.getElementById(`modal-${pokemon.id}`).close();
 
     axios.get("http://localhost:3001/team").then((res) => {
       const team = res.data;
@@ -321,186 +335,266 @@ export const PokemonCard = ({ url }) => {
   return (
     <>
       <div
-        className="card bg-base-200 shadow-md p-2 w-64 font-pokemon"
+        className="card overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 w-64 font-pokemon rounded-xl cursor-pointer transform hover:scale-105"
         onClick={() =>
           document.getElementById(`modal-${pokemon.id}`).showModal()
         }
       >
-        <figure className={`rounded-t-lg ${figureBg}`}>
+        {/* Pokemon Image with Styled Background */}
+        <figure className={`p-4 pt-6 ${figureBg}`}>
           <img
             src={pokemon.sprites.other["official-artwork"].front_default}
-            className="w-48 cursor-pointer"
+            className="w-40 h-40 object-contain drop-shadow-lg"
             alt={pokemon.name}
           />
         </figure>
-        <div className="card-body bg-base-300 rounded-b-lg">
-          <h2 className="card-title capitalize text-base-content">
-            {pokemon.name}
-          </h2>
 
-          {/* Status and HP row */}
-          <div className="rounded-md flex justify-between items-center p-1 bg-base-300">
-            <p className="font-semibold text-zinc-500">{status}</p>
-            <div className="flex gap-2 items-center">
-              <p className="font-semibold">HP {hp}</p>
-              <ElementLogo type={primaryType} />
+        <div className="card-body bg-base-200 pt-2 pb-4 px-4 rounded-b-xl">
+          {/* Pokemon Name and Type Icons */}
+          <div className="flex justify-between items-center mb-1">
+            <h2 className="card-title capitalize text-lg font-bold text-base-content">
+              {pokemon.name}
+            </h2>
+            <ElementLogo type={primaryType} className="w-6 h-6" />
+          </div>
+
+          {/* ID Number */}
+          <p className="text-xs text-zinc-500 -mt-1 mb-2">
+            #{pokemon.id.toString().padStart(4, "0")}
+          </p>
+
+          {/* Status and HP with nicer formatting */}
+          <div className="rounded-lg flex justify-between items-center p-2 bg-base-300 mb-3">
+            <p className="font-semibold text-sm text-zinc-500">{status}</p>
+            <div className="flex gap-1 items-center">
+              <HeartIcon className="w-4 h-4 text-error" />
+              <p className="font-bold text-sm">{hp}</p>
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-2 mb-2">
+          {/* Type badges with better styling */}
+          <div className="flex flex-wrap gap-2">
             {pokemon.types.map((t) => (
               <span
                 key={t.type.name}
-                className={`badge ${typeColors[t.type.name]}`}
+                className={`badge ${typeColors[t.type.name]} badge-sm py-2 px-3 font-medium`}
               >
                 {t.type.name.toUpperCase()}
               </span>
             ))}
           </div>
+        </div>
+      </div>
 
-          {/* Pokemon Details Modal */}
-          <dialog id={`modal-${pokemon.id}`} className="modal">
-            <div className={`modal-box bg-base-200`}>
-              <form method="dialog">
-                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                  ✕
-                </button>
-              </form>
-              <p className="capitalize font-bold text-xl text-center mt-4 rounded-lg text-primary">
-                {pokemon.name}{" "}
-                <span className="text-zinc-400">
-                  #{pokemon.id.toString().padStart(4, "0")}
-                </span>
+      {/* Pokemon Details Modal - Enhanced */}
+      <dialog id={`modal-${pokemon.id}`} className="modal">
+        <div className={`modal-box bg-base-200 max-w-3xl p-0 overflow-auto`}>
+          {/* Modal Header with type-based accent color */}
+          <div className={`px-6 py-4 ${figureBg} relative`}>
+            <form method="dialog">
+              <button className="btn btn-sm btn-circle btn-ghost absolute right-4 top-4 text-base-content bg-base-200 bg-opacity-50">
+                ✕
+              </button>
+            </form>
+
+            <div className="flex items-center gap-3">
+              <p className="capitalize font-bold text-2xl text-base-content">
+                {pokemon.name}
               </p>
+              <span className="text-zinc-500 font-medium">
+                #{pokemon.id.toString().padStart(4, "0")}
+              </span>
+            </div>
 
-              {/* Status and HP row in modal */}
-              <div className="rounded-md flex justify-between items-center p-2 bg-base-300 mt-2">
-                <p className="font-semibold text-zinc-500">{status}</p>
-                <div className="flex gap-2 items-center">
-                  <p className="font-semibold">HP {hp}</p>
-                  <ElementLogo type={primaryType} />
-                </div>
+            {/* Status and HP row in modal with nicer styling */}
+            <div className="rounded-lg flex justify-between items-center p-2 bg-base-100 bg-opacity-80 mt-2 w-full max-w-xs">
+              <p className="font-semibold text-zinc-600">{status}</p>
+              <div className="flex gap-2 items-center">
+                <p className="font-bold">HP {hp}</p>
+                <ElementLogo type={primaryType} />
               </div>
+            </div>
+          </div>
 
-              {/* Wrapper */}
-              <div className="mt-2 md:flex md:gap-4 md:justify-center">
-                {/* Image */}
-                <figure className={`rounded-lg ${figureBg}`}>
+          {/* Content wrapper */}
+          <div className="p-6">
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Left column - Image */}
+              <div className="flex flex-col items-center">
+                <figure
+                  className={`rounded-xl p-6 ${figureBg} w-full flex justify-center`}
+                >
                   <img
                     src={
                       pokemon.sprites.other["official-artwork"].front_default
                     }
-                    className="w-48"
+                    className="w-56 h-56 object-contain drop-shadow-xl"
                     alt={pokemon.name}
                   />
                 </figure>
 
-                {/* Info */}
-                <div>
-                  {/* Types */}
-                  <div className="bg-base-300 rounded-lg mt-2 px-4 py-2">
-                    <p className="font-semibold mb-2 text-base">Types</p>
-                    <div className="flex gap-2 flex-wrap">
-                      {pokemon.types.map((t) => (
-                        <span
-                          key={t.type.name}
-                          className={`badge text-base-content ${
-                            typeColors[t.type.name]
-                          }`}
-                        >
-                          {t.type.name.toUpperCase()}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Base Stats */}
-                  <div className="bg-base-300 rounded-lg mt-2 px-4 py-2">
-                    <p className="font-semibold mb-2 text-base">Base Stats</p>
-                    <div className="space-y-1">
-                      {pokemon.stats.map((stat) => (
-                        <div
-                          key={stat.stat.name}
-                          className="flex items-center justify-between gap-2"
-                        >
-                          <p className="w-32 text-sm font-medium capitalize">
-                            {stat.stat.name}
-                          </p>
-                          <progress
-                            className="progress w-full"
-                            value={stat.base_stat}
-                            max="200"
-                          ></progress>
-                          <p className="w-10 text-sm text-right">
-                            {stat.base_stat}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Weaknesses (Dynamic!) */}
-                  <div className="bg-base-300 rounded-lg mt-2 px-4 py-2">
-                    <p className="font-semibold mb-2 text-base">Weaknesses</p>
-                    <div className="flex flex-wrap gap-2">
-                      {weaknesses.length > 0 ? (
-                        weaknesses.map((type) => (
-                          <span
-                            key={type}
-                            className={`badge text-base-content ${
-                              typeColors[type] || "bg-gray-400"
-                            }`}
-                          >
-                            {type.toUpperCase()}
-                          </span>
-                        ))
-                      ) : (
-                        <p className="text-sm text-gray-500 italic">
-                          Loading...
-                        </p>
-                      )}
-                    </div>
+                {/* Types */}
+                <div className="bg-base-300 rounded-lg mt-4 px-4 py-3 w-full">
+                  <p className="font-bold mb-2 text-base">Types</p>
+                  <div className="flex gap-2 flex-wrap">
+                    {pokemon.types.map((t) => (
+                      <span
+                        key={t.type.name}
+                        className={`badge badge-lg text-base-content ${
+                          typeColors[t.type.name]
+                        } py-3`}
+                      >
+                        {t.type.name.toUpperCase()}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
 
-              {/* Add to Team */}
-              <button
-                onClick={openConfirmModal}
-                className="btn bg-primary hover:bg-yellow-500 text-black border-none btn-sm mt-4 w-full"
-              >
-                Add to Team
-              </button>
-            </div>
-          </dialog>
+              {/* Right column - Stats */}
+              <div className="space-y-4">
+                {/* Base Stats with improved progress bars */}
+                <div className="bg-base-300 rounded-lg px-4 py-3">
+                  <p className="font-bold mb-3 text-base">Base Stats</p>
+                  <div className="space-y-3">
+                    {pokemon.stats.map((stat) => (
+                      <div
+                        key={stat.stat.name}
+                        className="flex items-center gap-2"
+                      >
+                        <p className="w-32 text-sm font-medium capitalize">
+                          {stat.stat.name}
+                        </p>
+                        <div className="flex-1">
+                          <div className="w-full bg-base-200 rounded-full h-2.5">
+                            <div
+                              className="h-2.5 rounded-full"
+                              style={{
+                                width: `${Math.min((stat.base_stat / 200) * 100, 100)}%`,
+                                backgroundColor:
+                                  stat.base_stat > 100
+                                    ? "var(--color-accent)"
+                                    : "var(--color-primary)",
+                              }}
+                            ></div>
+                          </div>
+                        </div>
+                        <p className="w-10 text-sm text-right font-bold">
+                          {stat.base_stat}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
-          {/* Confirmation Modal */}
-          <dialog id={`confirm-modal-${pokemon.id}`} className="modal">
-            <div className="modal-box">
-              <h3 className="font-bold text-lg">Add to Team</h3>
-              <p className="py-4">
-                Are you sure you want to add{" "}
-                <span className="capitalize font-semibold">{pokemon.name}</span>{" "}
-                to your team?
-              </p>
-              <div className="modal-action">
-                <form method="dialog" className="flex gap-2">
-                  <button className="btn">Cancel</button>
-                  <button onClick={handleAddToTeam} className="btn btn-primary">
-                    Add
-                  </button>
-                </form>
+                {/* Weaknesses */}
+                <div className="bg-base-300 rounded-lg px-4 py-3">
+                  <p className="font-bold mb-2 text-base">Weaknesses</p>
+                  <div className="flex flex-wrap gap-2">
+                    {weaknesses.length > 0 ? (
+                      weaknesses.map((type) => (
+                        <span
+                          key={type}
+                          className={`badge badge-md text-base-content ${
+                            typeColors[type] || "bg-gray-400"
+                          }`}
+                        >
+                          {type.toUpperCase()}
+                        </span>
+                      ))
+                    ) : (
+                      <p className="text-sm text-gray-500 italic">Loading...</p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Additional Pokemon Details */}
+                <div className="bg-base-300 rounded-lg px-4 py-3">
+                  <p className="font-bold mb-2 text-base">Physical Traits</p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-sm text-zinc-500">Height</p>
+                      <p className="font-medium">
+                        {(pokemon.height / 10).toFixed(1)}m
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-zinc-500">Weight</p>
+                      <p className="font-medium">
+                        {(pokemon.weight / 10).toFixed(1)}kg
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </dialog>
-        </div>
-      </div>
 
-      {/* Toast Notification */}
+            {/* Add to Team Button */}
+            <button
+              onClick={openConfirmModal}
+              className="btn bg-primary hover:bg-yellow-500 text-black border-none mt-6 w-full font-bold py-2 text-base"
+            >
+              Add to Team
+            </button>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Confirmation Modal - Improved */}
+      <dialog id={`confirm-modal-${pokemon.id}`} className="modal">
+        <div className="modal-box bg-base-200">
+          <h3 className="font-bold text-xl mb-2">Add to Team</h3>
+          <div className="flex items-center gap-4 mb-4">
+            <div className={`p-2 rounded-lg ${figureBg}`}>
+              <img
+                src={pokemon.sprites.other["official-artwork"].front_default}
+                className="w-20 h-20 object-contain"
+                alt={pokemon.name}
+              />
+            </div>
+            <div>
+              <p className="text-lg">
+                Add <span className="capitalize font-bold">{pokemon.name}</span>{" "}
+                to your team?
+              </p>
+              <div className="flex gap-2 mt-1">
+                {pokemon.types.map((t) => (
+                  <span
+                    key={t.type.name}
+                    className={`badge badge-sm ${typeColors[t.type.name]}`}
+                  >
+                    {t.type.name.toUpperCase()}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="modal-action">
+            <form method="dialog" className="flex gap-2 w-full">
+              <button className="btn btn-outline flex-1">Cancel</button>
+              <button
+                onClick={handleAddToTeam}
+                className="btn btn-primary flex-1"
+              >
+                Add
+              </button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+
+      {/* Toast Notification - Improved */}
       {showToast && (
         <div className="toast toast-top toast-end z-50">
-          <div className={`alert alert-success ${toastType}`}>
-            <span className="capitalize">{toastMessage}</span>
+          <div className={`alert ${toastType} shadow-lg`}>
+            <div className="flex items-center gap-2">
+              {toastType === "alert-success" ? (
+                <CheckIcon className="w-5 h-5" />
+              ) : (
+                <AlertCircleIcon className="w-5 h-5" />
+              )}
+              <span className="capitalize font-medium">{toastMessage}</span>
+            </div>
           </div>
         </div>
       )}

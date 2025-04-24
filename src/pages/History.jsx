@@ -54,7 +54,7 @@ export const History = () => {
           <p className="text-success">Total Matches: {totalMatches}</p>
           <p className="text-primary">Wins: {totalWins}</p>
           <p className="text-error">Losses: {totalLosses}</p>
-          <p className="text-neutral">Draws: {totalDraws}</p>
+          <p className="text-base-content">Draws: {totalDraws}</p>
         </div>
 
         {battles.length === 0 ? (
@@ -77,7 +77,7 @@ export const History = () => {
                         ? "text-primary"
                         : battle.result.includes("You Lose!")
                         ? "text-error"
-                        : "text-neutral"
+                        : "text-base-content"
                     }`}
                   >
                     {battle.result}
