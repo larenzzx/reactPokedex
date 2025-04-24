@@ -305,7 +305,7 @@ export const Team = () => {
     <>
       <Navbar />
       <div className="container mx-auto px-4 pb-12">
-        <h2 className="text-3xl font-bold my-10 text-center font-pokemon">
+        <h2 className="text-3xl font-bold my-10 text-center">
           My Pokémon Team
         </h2>
 
