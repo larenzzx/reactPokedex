@@ -340,10 +340,10 @@ export const Team = () => {
                 >
                   <img
                     src={
-                      selectedToRemove.sprites?.other?.["official-artwork"]
+                      selectedToRemove.sprites?.other?.["dream_world"]
                         ?.front_default ||
                       pokemonDetails[selectedToRemove.name]?.sprites?.other?.[
-                        "official-artwork"
+                        "dream_world"
                       ]?.front_default
                     }
                     className="w-20 h-20 object-contain"
@@ -415,7 +415,7 @@ export const Team = () => {
                   <figure className={`p-4 pt-6 ${figureBg}`}>
                     <img
                       src={
-                        pokemon.sprites.other["official-artwork"].front_default
+                        pokemon.sprites.other["dream_world"].front_default
                       }
                       className="w-40 h-40 object-contain drop-shadow-lg"
                       alt={pokemon.name}
@@ -504,7 +504,7 @@ export const Team = () => {
                             >
                               <img
                                 src={
-                                  pokemon.sprites.other["official-artwork"]
+                                  pokemon.sprites.other["dream_world"]
                                     .front_default
                                 }
                                 className="w-56 h-56 object-contain drop-shadow-xl"

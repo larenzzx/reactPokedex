@@ -371,7 +371,7 @@ export const Battle = () => {
           }`}
         >
           <img
-            src={pokemon.sprites.other["official-artwork"].front_default}
+            src={pokemon.sprites.other["dream_world"].front_default}
             className="w-48 cursor-pointer"
             alt={pokemon.name}
           />

@@ -32,37 +32,6 @@
       ]
     },
     {
-      "id": "92a6",
-      "name": "wartortle",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png",
-      "stats": [
-        {
-          "name": "hp",
-          "base": 59
-        },
-        {
-          "name": "attack",
-          "base": 63
-        },
-        {
-          "name": "defense",
-          "base": 80
-        },
-        {
-          "name": "special-attack",
-          "base": 65
-        },
-        {
-          "name": "special-defense",
-          "base": 80
-        },
-        {
-          "name": "speed",
-          "base": 58
-        }
-      ]
-    },
-    {
       "id": "a08c",
       "name": "mewtwo",
       "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
@@ -90,6 +59,37 @@
         {
           "name": "speed",
           "base": 130
+        }
+      ]
+    },
+    {
+      "id": "546d",
+      "name": "bulbasaur",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 45
+        },
+        {
+          "name": "attack",
+          "base": 49
+        },
+        {
+          "name": "defense",
+          "base": 49
+        },
+        {
+          "name": "special-attack",
+          "base": 65
+        },
+        {
+          "name": "special-defense",
+          "base": 65
+        },
+        {
+          "name": "speed",
+          "base": 45
         }
       ]
     }
@@ -311,6 +311,14 @@
       "pokemon2": "tauros",
       "result": "mewtwo, You Win!",
       "date": "2025-04-24T08:38:18.281Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "fd6b",
+      "pokemon1": "mewtwo",
+      "pokemon2": "paras",
+      "result": "mewtwo, You Win!",
+      "date": "2025-04-30T02:56:52.542Z",
       "battleType": "damage"
     }
   ]

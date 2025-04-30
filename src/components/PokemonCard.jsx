@@ -304,7 +304,7 @@ export const PokemonCard = ({ url }) => {
       axios
         .post("http://localhost:3001/team", {
           name: pokemon.name,
-          image: pokemon.sprites.other["official-artwork"].front_default,
+          image: pokemon.sprites.other["dream_world"].front_default,
           stats: pokemon.stats.map((s) => ({
             name: s.stat.name,
             base: s.base_stat,
@@ -343,7 +343,7 @@ export const PokemonCard = ({ url }) => {
         {/* Pokemon Image with Styled Background */}
         <figure className={`p-4 pt-6 ${figureBg}`}>
           <img
-            src={pokemon.sprites.other["official-artwork"].front_default}
+            src={pokemon.sprites.other["dream_world"].front_default}
             className="w-40 h-40 object-contain drop-shadow-lg"
             alt={pokemon.name}
           />
@@ -426,7 +426,7 @@ export const PokemonCard = ({ url }) => {
                 >
                   <img
                     src={
-                      pokemon.sprites.other["official-artwork"].front_default
+                      pokemon.sprites.other["dream_world"].front_default
                     }
                     className="w-56 h-56 object-contain drop-shadow-xl"
                     alt={pokemon.name}
@@ -547,7 +547,7 @@ export const PokemonCard = ({ url }) => {
           <div className="flex items-center gap-4 mb-4">
             <div className={`p-2 rounded-lg ${figureBg}`}>
               <img
-                src={pokemon.sprites.other["official-artwork"].front_default}
+                src={pokemon.sprites.other["dream_world"].front_default}
                 className="w-20 h-20 object-contain"
                 alt={pokemon.name}
               />
