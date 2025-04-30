@@ -1,21 +1,114 @@
 {
   "team": [
     {
-      "id": "b14c",
-      "name": "venusaur",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
+      "id": "7d65",
+      "name": "mewtwo",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
       "stats": [
         {
           "name": "hp",
-          "base": 80
+          "base": 106
         },
         {
           "name": "attack",
-          "base": 82
+          "base": 110
         },
         {
           "name": "defense",
-          "base": 83
+          "base": 90
+        },
+        {
+          "name": "special-attack",
+          "base": 154
+        },
+        {
+          "name": "special-defense",
+          "base": 90
+        },
+        {
+          "name": "speed",
+          "base": 130
+        }
+      ]
+    },
+    {
+      "id": "3ab0",
+      "name": "kakuna",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/14.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 45
+        },
+        {
+          "name": "attack",
+          "base": 25
+        },
+        {
+          "name": "defense",
+          "base": 50
+        },
+        {
+          "name": "special-attack",
+          "base": 25
+        },
+        {
+          "name": "special-defense",
+          "base": 25
+        },
+        {
+          "name": "speed",
+          "base": 35
+        }
+      ]
+    },
+    {
+      "id": "9938",
+      "name": "charizard",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 78
+        },
+        {
+          "name": "attack",
+          "base": 84
+        },
+        {
+          "name": "defense",
+          "base": 78
+        },
+        {
+          "name": "special-attack",
+          "base": 109
+        },
+        {
+          "name": "special-defense",
+          "base": 85
+        },
+        {
+          "name": "speed",
+          "base": 100
+        }
+      ]
+    },
+    {
+      "id": "b8cf",
+      "name": "mew",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 100
+        },
+        {
+          "name": "attack",
+          "base": 100
+        },
+        {
+          "name": "defense",
+          "base": 100
         },
         {
           "name": "special-attack",
@@ -27,7 +120,7 @@
         },
         {
           "name": "speed",
-          "base": 80
+          "base": 100
         }
       ]
     }
@@ -275,26 +368,42 @@
       "battleType": "damage"
     },
     {
-      "id": "166e",
-      "pokemon1": "mewtwo",
-      "pokemon2": "jigglypuff",
-      "result": "mewtwo, You Win!",
-      "date": "2025-04-24T14:28:51.025Z"
+      "id": "703f",
+      "pokemon1": "kakuna",
+      "pokemon2": "golduck",
+      "result": "golduck, You Lose!",
+      "date": "2025-04-25T04:38:02.847Z"
     },
     {
-      "id": "30bd",
-      "pokemon1": "metapod",
-      "pokemon2": "victreebel",
-      "result": "victreebel, You Lose!",
-      "date": "2025-04-24T14:29:35.494Z",
+      "id": "b48e",
+      "pokemon1": "mewtwo",
+      "pokemon2": "elekid",
+      "result": "mewtwo, You Win!",
+      "date": "2025-04-25T04:38:42.731Z",
       "battleType": "damage"
     },
     {
-      "id": "575b",
-      "pokemon1": "venusaur",
-      "pokemon2": "rattata",
-      "result": "venusaur, You Win!",
-      "date": "2025-04-24T15:29:41.585Z"
+      "id": "8353",
+      "pokemon1": "kakuna",
+      "pokemon2": "snom",
+      "result": "kakuna, You Win!",
+      "date": "2025-04-25T04:39:52.557Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "cd6c",
+      "pokemon1": "charizard",
+      "pokemon2": "steelix-mega",
+      "result": "steelix-mega, You Lose!",
+      "date": "2025-04-25T05:00:55.757Z",
+      "battleType": "damage"
+    },
+    {
+      "id": "e5f5",
+      "pokemon1": "kakuna",
+      "pokemon2": "basculin-blue-striped",
+      "result": "basculin-blue-striped, You Lose!",
+      "date": "2025-04-25T05:01:29.384Z"
     }
   ]
 }

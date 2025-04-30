@@ -220,7 +220,7 @@ export const Battle = () => {
 
         // Fetch all Pokemon data
         const pokemonResponse = await axios.get(
-          "https://pokeapi.co/api/v2/pokemon?limit=151"
+          "https://pokeapi.co/api/v2/pokemon?limit=1281"
         );
         const detailedData = await Promise.all(
           pokemonResponse.data.results.map((p) =>

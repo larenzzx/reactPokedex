@@ -39,8 +39,9 @@ export const Pokedex = () => {
     setLoading(true);
     setLoadingProgress(0);
     
+    // 1281 max
     axios
-      .get(`https://pokeapi.co/api/v2/pokemon?limit=151`) 
+      .get(`https://pokeapi.co/api/v2/pokemon?limit=1281`) 
       .then((res) => {
         setPokemonList(res.data.results);
         
